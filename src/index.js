@@ -5,14 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RestAPIsProvider } from './contexts/RestAPIsContext';
 import { BrowserRouter } from 'react-router-dom';
+import { CommentProvider } from './contexts/CommentContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RestAPIsProvider>
+    <RestAPIsProvider><CommentProvider>
       <BrowserRouter>
         <App /> 
       </BrowserRouter>
-    </RestAPIsProvider>
+    </CommentProvider></RestAPIsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

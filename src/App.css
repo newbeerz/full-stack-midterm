@@ -124,6 +124,8 @@
   display: flex;
   align-items: center;
   padding: 10px;
+  position: sticky;
+  width: 100vw;
 }
 
 .navbar-item{
@@ -206,11 +208,14 @@
 .btn-links{
   padding: 10px;
   margin: 15px 0;
+}
+
+.btn-links.btn-right{
   text-align: right;
 }
 
-.btn-link.btn-right{
-  text-align: left;
+.btn-links.btn-center{
+  text-align: center;
 }
 
 .btn-link:hover{
@@ -263,4 +268,80 @@
 
 .categories-item > div{
   width: 500px;
+}
+
+.btn-toTop{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  z-index: 20;
+  right: 50px;
+  bottom: 50px;
+  border-radius: 50%;
+}
+
+.btn-toTop > button {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--theme-color);
+  border: 2px solid black;
+}
+
+.btn-toTop > button:hover {
+  cursor: pointer;
+  filter: brightness(0.90);
+}
+
+.comment-input{
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input.comment-input{
+  width: 50vw;
+}
+
+textarea.comment-input{
+  width: 100%;
+  height: 150px;
+}
+
+.comment-btn{
+  text-align: right;
+}
+
+.comment-btn > button{
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--theme-color);
+}
+
+.comment-btn > button:hover{
+  filter: brightness(.95);
+}
+
+.comment-label{
+  margin-right: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.user-item{
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+}
+
+.link-default{
+  color: unset;
+  text-decoration: none;
+}
+
+.link-default:hover{
+  color: unset;
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom";
 import { useRestAPI } from "../contexts/RestAPIsContext";
+import { CreateComment } from "./CreateComment";
 import Error from "./Error";
 import PostComment from "./PostComment";
 
@@ -30,11 +31,13 @@ const PostDetail = ( ) => {
                 setAuthor(findUser(post.author))
                 setCategories(findCategory(post.categories))
                 setTags(findTag(post.tags))
-                setComments(findComment(post.id))
                 setDateTime(toDateTime(post.date)) 
-            }
-            else{
-                
+                fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments?post=${post.id}`)
+                .then(res => res.json())
+                .then(
+                    (result) => { setComments(result)},
+                    (error) => {}
+                )
             }
         },
         [findUser, findCategory, findTag, post, findComment, toDateTime],
@@ -65,9 +68,10 @@ const PostDetail = ( ) => {
                 </div>
                 <div className="post-num-comment post-comment">{comments.length} คอมเมนต์</div>
                 <hr />
+                <CreateComment post={post} setComments={setComments} />
                 {
                     comments.map((comment, index) => (
-                        <PostComment comment={comment} index={index} />
+                        <PostComment key={index} comment={comment} index={index} />
                     ))
                 }
             </div>

@@ -7,6 +7,9 @@ import { PostPage } from './routes/PostPage';
 import { CategoryPage } from './routes/CategoryPage';
 import PostDetail from './components/PostDetail';
 import Footer from './components/Footer';
+import { ButtonGoToTop } from './components/ButtonGoToTop';
+import { AuthorPage } from './routes/AuthorPage';
+import { CateAndTagPage } from './routes/CateAndTagPage';
 
 function App() {
   
@@ -19,9 +22,13 @@ function App() {
           <Route path="/posts" element={<PostPage />} />
           <Route path="/posts/:id" element={<PostDetail />} />
           <Route path="/categories" element={<CategoryPage />} />
+          <Route path="/categories/:id" element={<CateAndTagPage type="cate" />} />
+          <Route path="/tags/:id" element={<CateAndTagPage type="tag" />} />
+          <Route path="/author/:id" element={<AuthorPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
+      <ButtonGoToTop />
       <Footer />
     </div>
   );
