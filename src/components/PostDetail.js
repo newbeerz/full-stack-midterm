@@ -84,13 +84,17 @@ const PostDetail = ( ) => {
                 <div className="post-title">{post.title.rendered}</div>
                 <div className="cates">
                     { categories.map((c) => (
-                        <div key={c.id} className="cates-item"> {c.name}</div>
+                        <Link to={`/categories/${c.id}`} className="link-default" key={c.id}>
+                            <div key={c.id} className="cates-item"> {c.name}</div>
+                        </Link>
                     )) }
                 </div>
                 <div dangerouslySetInnerHTML={{__html :post.content.rendered}}></div>
                 <div className="tags">
                     { tags.map((t) => (
-                        <div key={t.id} className="tags-item">#{t.name}</div>
+                        <Link to={`/tags/${t.id}`} className="link-default" key={t.id}>
+                            <div key={t.id} className="tags-item">#{t.name}</div>
+                        </Link>
                     )) }
                 </div>
                 <div className="post-num-comment post-comment">{comments.length} คอมเมนต์</div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 import { useRestAPI } from "../contexts/RestAPIsContext";
 
 const PostInterestItem = ( {post} ) => {
@@ -22,13 +23,18 @@ const PostInterestItem = ( {post} ) => {
             <h2>{post.title.rendered}</h2>
             <div className="cates">
                 { categories.map((c) => (
-                    <div key={c.id} className="cates-item"> {c.name}</div>
-                    )) }
+                    <Link to={`/categories/${c.id}`} className="link-default" key={c.id}>
+                        <div key={c.id} className="cates-item"> {c.name}</div>
+                    </Link>
+                    )) 
+                }
             </div>
             <div dangerouslySetInnerHTML={{__html :post.excerpt.rendered}}></div>
             <div className="tags">
                 { tags.map((t) => (
-                    <div key={t.id} className="tags-item">#{t.name}</div>
+                    <Link to={`/tags/${t.id}`} className="link-default" key={t.id}>
+                        <div key={t.id} className="tags-item">#{t.name}</div>
+                    </Link>
                     )) }
             </div>
             <div className="post-datetime" style={{textAlign: "right"}}>{dateTime.date}</div>
