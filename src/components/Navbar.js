@@ -29,17 +29,17 @@ const Navbar = () => {
     )
 
     return (
-        <div className="navbar">
-            <div className="navbar-item">
+        <div className="nvbar">
+            <div className="nvbar-item">
                 <Link to="/" className="link-default">
-                    <div className="navbar-title">ONCE AGAIN</div>
+                    <div className="nvbar-title">ONCE AGAIN</div>
                 </Link>
             </div>
-            <div className="navbar-item right">
-                <div className="navbar-btn"><NavLink to="/" className="navbar-link">หน้าหลัก</NavLink></div>
-                <div className="navbar-btn"><NavLink to="/posts" className="navbar-link">โพสต์</NavLink></div>
-                <div className="navbar-btn"><NavLink to="/categories" className="navbar-link">หมวดหมู่</NavLink></div>
-                <div className="navbar-btn"><NavLink to="/about" className="navbar-link">เกี่ยวกับ</NavLink></div>
+            <div className="nvbar-item right">
+                <div className="nvbar-btn"><NavLink to="/" className="navbar-link">หน้าหลัก</NavLink></div>
+                <div className="nvbar-btn"><NavLink to="/posts" className="navbar-link">โพสต์</NavLink></div>
+                <div className="nvbar-btn"><NavLink to="/categories" className="navbar-link">หมวดหมู่</NavLink></div>
+                <div className="nvbar-btn"><NavLink to="/about" className="navbar-link">เกี่ยวกับ</NavLink></div>
             </div>
         </div>
     )

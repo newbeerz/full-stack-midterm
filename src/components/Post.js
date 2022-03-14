@@ -5,36 +5,14 @@ import { HeadTitle } from './HeadTitle';
 import PostItem from './PostItem';
 
 const Post = ( {text="โพสต์", home="false"} ) => {
-    const {posts} = useRestAPI()
     const [nowPost, setNowPost] = useState([])
-
-    const lastPosts = useMemo(
-        () => {
-            if (posts.length !== 0){
-                let newArr = [];
-                for (let i = 0; i < 4; i++){
-                    newArr.push(posts[i])
-                }
-                return newArr
-            }
-            else {
-                return []
-            }
-        },
-        [posts]
-    )
-
 
     useEffect(
         () => {
-            if (home === "true"){
-                setNowPost(lastPosts)
-            }
-            else {
-                setNowPost(posts)
-            }
-        },
-        [lastPosts, posts, setNowPost, home]
+            fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts?orderby=date&per_page=${home === "true" ? 4 : 100}`)
+                .then(res => res.json())
+                .then((result) => { setNowPost(result)})
+        }
     )
 
     return (

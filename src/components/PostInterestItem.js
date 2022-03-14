@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { useRestAPI } from "../contexts/RestAPIsContext";
+import { ButtonLink } from "./ButtonLink";
 
 const PostInterestItem = ( {post} ) => {
     const [categories, setCategories] = useState([]);
@@ -37,6 +38,7 @@ const PostInterestItem = ( {post} ) => {
                     </Link>
                     )) }
             </div>
+            <ButtonLink to={`/posts/${post.id}`} text="ดูเพิ่มเติม" align="right" />
             <div className="post-datetime" style={{textAlign: "right"}}>{dateTime.date}</div>
         </div>
     )

@@ -13,6 +13,7 @@
   max-width: 1520px;
   margin: auto;
   padding: 20px;
+  padding-top: 100px;
 }
 
 /* width */
@@ -118,31 +119,32 @@
   text-decoration: underline;
 }
 
-.navbar{
+.nvbar{
   height: 75px;
   background: var(--theme-color);
   display: flex;
   align-items: center;
   padding: 10px;
-  position: sticky;
+  position: fixed;
   width: 100vw;
+  z-index: 5;
 }
 
-.navbar-item{
+.nvbar-item{
   width: 50%;
   display: flex;
 }
 
-.navbar-item.right{
+.nvbar-item.right{
   justify-content: right;
 }
 
-.navbar-title{
+.nvbar-title{
   font-size: 24px;
   font-weight: bold;
 }
 
-.navbar-item>.navbar-btn{
+.nvbar-item>.nvbar-btn{
   padding: 0 30px;
   font-size: 24px;
 }
@@ -256,17 +258,18 @@
   color: #555;
 }
 
-.categories{
+.categories, .tags-box{
   width: 100%;
   overflow-y: auto;
+  display: none;
 }
 
-.categories-item{
+.categories-item, .tags-box-item{
   display: inline-flex;
   gap: 20px;
 }
 
-.categories-item > div{
+.categories-item > div,.tags-box-item > div {
   width: 500px;
 }
 
@@ -344,4 +347,17 @@ textarea.comment-input{
 
 .link-default:hover{
   color: unset;
+}
+
+.cate-title, .tag-title{
+  background-color: #eee;
+  padding: 15px 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.cate-title:hover, .tag-title:hover{
+  cursor: pointer;
 }

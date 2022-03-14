@@ -45,12 +45,10 @@ const PostItem = ( {post} ) => {
             setCategories(findCategory(post.categories))
             setTags(findTag(post.tags))
             setDateTime(toDateTime(post.date))
-            fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments?post=${post.id}`)
-                .then(res => res.json())
-                .then(
-                    (result) => { setComments(result)},
-                    (error) => {}
-                )
+            
+            fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments?post=${post.id}&orderby=date&per_page=100`)
+            .then(res => res.json())
+            .then((result) => { setComments(result)})
         },
         [findUser, findCategory, findTag, post, findComment, toDateTime],
     )

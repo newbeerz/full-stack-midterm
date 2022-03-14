@@ -6,7 +6,7 @@ export const TagItem = ({tag}) => {
 
     const {posts} = useRestAPI()
 
-    const categoryPosts = useMemo(
+    const tagPosts = useMemo(
         () => {
             let postList = []
             posts.forEach((post) => {
@@ -21,10 +21,10 @@ export const TagItem = ({tag}) => {
     )
     
     return (
-        <div className="categories">
-            <div className="categories-item">
+        <div className="tags-box">
+            <div className="tags-box-item">
                 {
-                    categoryPosts.map((post) => (
+                    tagPosts.map((post) => (
                         <PostItem key={post.id} post={post} />
                     ))
                 }
