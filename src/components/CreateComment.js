@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import { useComment } from "../contexts/CommentContext"
 import moment from "moment";
-import RestAPIs from "../contexts/RestAPIs";
 
 export const CreateComment = ({post, setComments}) => {
 

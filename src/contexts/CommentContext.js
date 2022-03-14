@@ -6,7 +6,7 @@ export const CommentProvider = ( {children} ) => {
 
     const sendComment = useCallback(
       (data) => async () => {
-        const response = await fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments`,
+        await fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments`,
         {
           method: 'POST',
           mode: 'cors',
