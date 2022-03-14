@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../App.css';
-import { useRestAPI } from '../contexts/RestAPIsContext';
 import { HeadTitle } from './HeadTitle';
 import PostItem from './PostItem';
 

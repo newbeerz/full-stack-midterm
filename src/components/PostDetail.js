@@ -1,8 +1,7 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom";
 import { useRestAPI } from "../contexts/RestAPIsContext";
 import { CreateComment } from "./CreateComment";
-import Error from "./Error";
 import PostComment from "./PostComment";
 
 const PostDetail = ( ) => {
