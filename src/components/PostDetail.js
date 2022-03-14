@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Link, useParams } from "react-router-dom";
 import { useRestAPI } from "../contexts/RestAPIsContext";
 import { CreateComment } from "./CreateComment";
@@ -17,6 +17,33 @@ const PostDetail = ( ) => {
 
     const { findPost, findUser, findCategory, findTag, findComment, toDateTime } = useRestAPI();
     
+    const sortComment = useMemo(
+        () => {
+            if (comments === 0){
+                return []
+            }
+
+            let newArr = comments.slice()
+
+            while (true){
+                let sorted = true
+                for (let i = 0; i < comments.length - 1; i++){
+                    if (comments[i].date > comments[i+1].date){
+                        let cpy = comments[i+1]
+                        comments[i+1] = comments[i]
+                        comments[i] = cpy
+                        sorted = false
+                    }
+                }
+
+                if (sorted){
+                    return newArr.reverse()
+                }
+            }
+        },
+        [comments]
+    )
+
     useEffect(
         () => {
             setPost(findPost(id))
@@ -70,7 +97,7 @@ const PostDetail = ( ) => {
                 <hr />
                 <CreateComment post={post} setComments={setComments} />
                 {
-                    comments.map((comment, index) => (
+                    sortComment.map((comment, index) => (
                         <PostComment key={index} comment={comment} index={index} />
                     ))
                 }

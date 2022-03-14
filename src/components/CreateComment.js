@@ -18,13 +18,16 @@ export const CreateComment = ({post, setComments}) => {
                     "content": msg.value
                 }
                 sendComment(data)()
-                fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments?post=${post.id}`)
-                .then(res => res.json())
-                .then(
-                    (result) => { setComments(result)},
-                    (error) => {}
+                .then( () => {
+                    fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments?post=${post.id}`)
+                    .then(res => res.json())
+                    .then(
+                        (result) => { setComments(result) },
+                        (error) => {}
+                    )
+                    msg.value = ""
+                }                    
                 )
-                msg.value = ""
             }
         },
         [sendComment, post, setComments]
