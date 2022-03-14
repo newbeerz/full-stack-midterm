@@ -24,6 +24,7 @@ export const CreateComment = ({post, setComments}) => {
                     (result) => { setComments(result)},
                     (error) => {}
                 )
+                msg.value = ""
             }
         },
         [sendComment, post, setComments]
