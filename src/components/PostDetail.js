@@ -75,7 +75,9 @@ const PostDetail = ( ) => {
             <div className="container">
                 <Link to={"/posts"} className="a-link">กลับ</Link><br /><br />
                 <div className="author">
-                    <img src={author.avatar_urls ? author.avatar_urls["96"] : ""} alt="" className="author-avatar"></img>
+                    <Link   Link to={`/author/${author.id}`}>
+                        <img src={author.avatar_urls ? author.avatar_urls["96"] : ""} alt="" className="author-avatar"></img>
+                    </Link>
                     <div>
                         <div className="author-name">{author.name}</div>
                         <div className="post-datetime">{dateTime.date} {dateTime.time}</div>
