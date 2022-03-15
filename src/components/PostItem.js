@@ -56,7 +56,7 @@ const PostItem = ( {post} ) => {
     return (
         <div className="post-item">
             <div className="author">
-                <Link to={`/author/${author.id}`}>
+                <Link to={`/authors/${author.id}`}>
                     <img src={author.avatar_urls ? author.avatar_urls["96"] : ""} alt="" className="author-avatar"></img>
                 </Link>
                 <div>

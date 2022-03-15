@@ -361,3 +361,21 @@ textarea.comment-input{
 .cate-title:hover, .tag-title:hover{
   cursor: pointer;
 }
+
+.author-list{
+  display: inline-flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.author-item{
+  border: 1px solid black;
+  margin: 10px 0;
+  border-radius: 10px;
+  width: 50%;
+  transition: .25s;
+}
+
+.author-item:hover{
+  transform: scale(1.01);
+}

@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import { ButtonGoToTop } from './components/ButtonGoToTop';
 import { AuthorPage } from './routes/AuthorPage';
 import { CateAndTagPage } from './routes/CateAndTagPage';
+import { AuthorListPage } from './routes/AuthorListPage';
 
 function App() {
   
@@ -24,7 +25,8 @@ function App() {
           <Route path="/categories" element={<CategoryPage />} />
           <Route path="/categories/:id" element={<CateAndTagPage type="cate" />} />
           <Route path="/tags/:id" element={<CateAndTagPage type="tag" />} />
-          <Route path="/author/:id" element={<AuthorPage />} />
+          <Route path="/authors" element={<AuthorListPage />} />
+          <Route path="/authors/:id" element={<AuthorPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>

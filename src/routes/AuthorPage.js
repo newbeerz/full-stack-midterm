@@ -37,6 +37,7 @@ export const AuthorPage = () => {
 
     return (
         <div>
+            <h1 className="ms-3 text-center">{user.name}'s Profile</h1>
             <UserProfile user={user} />
             <HeadTitle text={`โพสต์ทั้งหมด ${author_posts.length} โพสต์`} />
             {

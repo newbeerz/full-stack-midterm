@@ -17,8 +17,11 @@ const Navbar = () => {
             else if (path.includes("/categories") || path.includes("/tags")){
                 links[2].classList.add("selected")
             }
-            else if (path.includes("/about")){
+            else if (path.includes("/authors")){
                 links[3].classList.add("selected")
+            }
+            else if (path.includes("/about")){
+                links[4].classList.add("selected")
             }
             else if (path.includes("/")){
                 links[0].classList.add("selected")
@@ -39,6 +42,7 @@ const Navbar = () => {
                 <div className="nvbar-btn"><NavLink to="/" className="navbar-link">หน้าหลัก</NavLink></div>
                 <div className="nvbar-btn"><NavLink to="/posts" className="navbar-link">โพสต์</NavLink></div>
                 <div className="nvbar-btn"><NavLink to="/categories" className="navbar-link">หมวดหมู่</NavLink></div>
+                <div className="nvbar-btn"><NavLink to="/authors" className="navbar-link">ผู้ใช้</NavLink></div>
                 <div className="nvbar-btn"><NavLink to="/about" className="navbar-link">เกี่ยวกับ</NavLink></div>
             </div>
         </div>
