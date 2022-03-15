@@ -6,7 +6,7 @@ const RestAPIs = ( name, id="" ) => {
     const [items, setItems] = useState(null);
 
     useEffect(() => {
-        fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/${name}/${id}`)
+        fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/${name}/${id}?per_page=100`)
           .then(res => res.json())
           .then(
             (result) => {

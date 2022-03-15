@@ -16,7 +16,8 @@ export const AuthorListPage = () => {
             .then((result) => { setUsers(result);})
             .catch((er)=> {console.log(er.message); setError(er)})
             .finally(() => {setLoading(false)})
-        }
+        },
+        []
     )
 
     if (loading) return "loading..."

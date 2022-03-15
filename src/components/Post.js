@@ -11,7 +11,8 @@ const Post = ( {text="โพสต์", home="false"} ) => {
             fetch(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts?orderby=date&per_page=${home === "true" ? 4 : 100}`)
                 .then(res => res.json())
                 .then((result) => { setNowPost(result)})
-        }
+        },
+        [home]
     )
 
     return (
